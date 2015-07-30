@@ -11,7 +11,7 @@ module freq_divider(clk, clk_local, rst_n, flag);
 		if(!rst_n) cnt <= 8'd0;
 		else if (!flag) cnt <= 8'd0;
 		else if(cnt <= 8'd127) cnt <= cnt + 1'd1;
-		else cnt <= 8'd0;
+		else cnt <= 8'd1;
 	
 	assign  clk_local = ( cnt <= 8'd64) ? 1'b0 : 1'b1;
 		
